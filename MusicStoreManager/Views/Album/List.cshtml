@@ -1,0 +1,51 @@
+﻿<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/images/every-genre-all-at-once.jpg);">
+
+    <div class="bradcumbContent">
+        <p id="pageTitle1">Check 'm all</p>
+        <h2 id="pageTitle2">All Genres</h2>
+    </div>
+
+</section>
+
+<section class="album-catagory section-padding-100-0">
+    <div class="container">
+        @await Component.InvokeAsync("GenreDropDown")
+        <div id="albumDiv" class="row all-albums">
+
+        </div>
+
+        <div class="row">
+
+                <div id="prev" class="col-md-3 offset-md-3" style="margin-bottom:20px">
+                    <button id="prevBtn" class="btn oneMusic-btn"><i class="fa fa-angle-double-left"></i> Previous Page</button>
+                </div>
+                <div id="next" class="col-md-6" style="margin-bottom:20px">
+                    <button id="nextBtn" class="btn oneMusic-btn">Next Page <i class="fa fa-angle-double-right"></i></button>
+                </div>
+
+        </div>
+    </div>
+</section>
+
+<script id="albumListTemplate" type="text/template">
+
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
+        <div class="single-album">
+                <a href="/Album/Details/{{albumid}}/{{artistid}}">
+                    <img src="{{albumarturl}}" alt="">
+                </a>
+                <div class="album-info">
+                    <a href="/Album/Details/{{albumid}}/{{artistid}}">
+                        <h5>{{artist}}</h5>
+                    </a>
+                    <a href="/Album/Details/{{albumid}}/{{artistid}}">
+                        <p>{{title}}</p>
+                    </a>
+                </div>
+        </div>
+    </div>
+
+</script>
+
+
+

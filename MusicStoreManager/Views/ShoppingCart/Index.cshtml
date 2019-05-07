@@ -1,0 +1,81 @@
+﻿@model ShoppingCartViewModel
+
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/images/vinyl-records-945396_1920.jpg);">
+    <div class="bradcumbContent">
+        <p>Go on, treat yourself</p>
+        <h2>Shoppingcart</h2>
+    </div>
+</section>
+
+<section class="bg padding-y">
+    <div class="container">
+        <div class="row">
+            <main class="col-sm-9">
+                <div class="card">
+                    <table class="table table-hover shopping-cart-wrap">
+                        <thead class="text-muted">
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col" width="120">Quantity</th>
+                                <th scope="col" width="120">Price</th>
+                                <th scope="col" class="text-right" width="200">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+                            {
+                                <tr>
+                                    <td>
+                                        <figure class="media">
+                                            <div class="img-wrap"><img src="@item.Album.AlbumArtUrl" class="img-thumbnail img-sm"></div>
+                                            <figcaption class="media-body">
+                                                <h6 class="title text-truncate">@item.Album.Title </h6>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td class="center">
+                                        @item.Amount
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">@((item.Amount * item.Album.Price).ToString("c"))</var>
+                                            <small class="text-muted">(@item.Album.Price)</small>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <a asp-action="RemoveFromShoppingCart" asp-controller="ShoppingCart" asp-route-id="@item.Album.AlbumId" class="btn btn-outline-danger"> × Remove</a>
+                                    </td>
+                                </tr>
+                            }
+                    </table>
+                </div>
+            </main>
+            <aside class="col-sm-3">
+                <dl class="dlist-align h4">
+                    <dt>Total:</dt>
+                    <dd class="text-right"><strong>@Model.ShoppingCartTotal.ToString("c")</strong></dd>
+                </dl>
+                <hr>
+                <figure class="itemside mb-3">
+                    <aside class="aside"><img src="~/lib/images/icons/pay-visa.png"></aside>
+                    <div class="text-wrap small text-muted">
+                        Pay by Visa
+                    </div>
+                </figure>
+                <figure class="itemside mb-3">
+                    <aside class="aside"> <img src="~/lib/images/icons/pay-mastercard.png"> </aside>
+                    <div class="text-wrap small text-muted">
+                        Pay by MasterCard<br>
+                    </div>
+                </figure>
+            </aside>
+        </div>
+        <div style="margin-top:4px">
+            <p class="alert-danger">This is not a real store, just a test site. You cannot really order.</p>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-outline-primary">Continue Shopping</a>
+            <a asp-action="Checkout" asp-controller="Order" class="btn btn-outline-success dropright">Checkout</a>
+        </div>
+    </div>
+
+</section>
+

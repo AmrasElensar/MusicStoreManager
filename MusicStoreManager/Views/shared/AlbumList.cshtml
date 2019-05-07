@@ -1,0 +1,17 @@
+﻿@model AlbumViewModel
+
+<div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item">
+    <div class="single-album">
+        <a asp-action="Details" asp-controller="Album" asp-route-id="@Model.AlbumId">
+            <img src="@Model.AlbumArtUrl" alt="">
+        </a>
+        <div class="album-info">
+            <a asp-action="Details" asp-controller="Album" asp-route-id="@Model.AlbumId">
+                <h5>@Model.Artist</h5>
+            </a>
+            <a asp-action="Details" asp-controller="Album" asp-route-id="@Model.AlbumId">
+                <p>@Model.Title</p>
+            </a>
+        </div>
+    </div>
+</div>

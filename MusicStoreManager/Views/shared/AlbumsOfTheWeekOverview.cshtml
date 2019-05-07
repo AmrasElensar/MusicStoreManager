@@ -1,0 +1,15 @@
+﻿@model Album
+
+<div class="single-album">
+    <a asp-controller="Album" asp-action="Details" asp-route-id="@Model.AlbumId" asp-route-artistId="@Model.ArtistId">
+        <img src="@Model.AlbumArtUrl" alt="">
+    </a>
+    <div class="album-info">
+        <a asp-controller="Album" asp-action="Details" asp-route-id="@Model.AlbumId"asp-route-artistId="@Model.ArtistId">
+            <h5>@Model.Artist.Name</h5>
+        </a>
+        <a asp-controller="Album" asp-action="Details" asp-route-id="@Model.AlbumId"asp-route-artistId="@Model.ArtistId">
+            <p>@Model.Title</p>
+        </a>
+    </div>
+</div>

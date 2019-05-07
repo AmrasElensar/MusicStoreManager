@@ -1,0 +1,88 @@
+﻿@model AlbumViewModel
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+@{
+    Layout = "_Layout_noNav";
+}
+<head>
+    <script src="~/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="~/js/UpdateAlbum.js"></script>
+</head>
+
+<div id="custom-content" class="details-popup card" style="margin-top:5px">
+
+        <div class="breadcumb-area-sm bg-img bg-overlay" style="background-image: url(/images/every-genre-all-at-once.jpg);">
+            <div class="bradcumbContent">
+                <p>@Model.Artist</p>
+                <h2><input type="text" name="title" value="@Model.Title" class="form-control" /></h2>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <aside class="col-sm-5 border-right">
+                <div class="single-album mt-30">
+                    <img src="@Model.AlbumArtUrl" />
+
+                </div>
+                <input type="text" name="albumArtUrl" value="@Model.AlbumArtUrl" class="form-control" />
+            </aside>
+            <aside class="col-sm-7">
+                <article>
+                    <div class="mb-3">
+                        <var class="price h3 text-warning">
+                            <span class="currency">EUR €</span><input type="text" name="price" class="num form-control" value="@Model.Price"/>
+                        </var>
+                        <span class="currency">EUR €</span><span><del class="price-old">@(Model.Price + 2)</del></span>
+                    </div>
+                    <dl>
+                        <dt>Description</dt>
+                        <dd>
+                            <p>
+                                Space for description, still needs to be added to the database.
+                                consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl class="row">
+                        <dt class="col-sm-3">Genre</dt>
+                        <dd class="col-sm-9">@await Component.InvokeAsync("GenreSelector")</dd>
+
+                        <dt class="col-sm-3">Artist</dt>
+                        <dd class="col-sm-9">@Model.Artist</dd>
+
+                        <dt class="col-sm-3">Delivery</dt>
+                        <dd class="col-sm-9">Worldwide </dd>
+
+                        <dt class="col-sm-3">Album of the week?</dt>
+                        <dd class="col-sm-9">
+                            <label class="switch">
+                                <input type="checkbox" value="true" name="albumOfTheWeek">
+                                <span class="slider round"></span>
+                            </label>
+                        </dd>
+                    </dl>
+                    <div class="rating-wrap">
+                        Rating
+                        <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                                <i class="fa-star"></i> <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button id="updateAlbum" class="btn oneMusic-btn mt-30">Update <i class="fa fa-angle-double-right"></i></button>
+                </article>
+            </aside>
+        </div>
+</div>
+
+<input name='artistId' type='hidden' value='@Model.ArtistId' />
+<input name='albumId' type='hidden' value='@Model.AlbumId' />

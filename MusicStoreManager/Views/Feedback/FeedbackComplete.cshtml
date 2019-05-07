@@ -1,0 +1,11 @@
+﻿@model Feedback
+
+<div class="jumbotron">
+    <h1 class="display-4">Hi @Model.Name!</h1>
+    <p class="lead">Thanks for providing some feedback.</p>
+    <hr class="my-4">
+    <p>If needed, we'll be in touch.</p>
+    <p>
+        <button><a asp-controller="Home" asp-action="Index" class="nav-link">Cancel <span class="sr-only">(current)</span></a></button>
+    </p>
+</div>

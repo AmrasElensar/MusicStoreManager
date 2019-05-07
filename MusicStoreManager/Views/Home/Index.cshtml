@@ -1,0 +1,96 @@
+﻿@model HomeViewModel
+
+<section class="hero-area">
+    <div class="hero-slides owl-carousel">
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(/images/music-3507317_1920.jpg)"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">The MusicStore</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">Welcome<span>Welcome</span></h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" asp-controller="Album" asp-action="List" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(/images/concert-768722_1920.jpg)"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">For the love of music</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">A wide selection of genres<span>A wide selection of genres</span></h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" asp-controller="Album" asp-action="List" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-slide d-flex align-items-center justify-content-center">
+            <!-- Slide Img -->
+            <div class="slide-img bg-img" style="background-image: url(/images/audience-868074_1920.jpg)"></div>
+            <!-- Slide Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-slides-content text-center">
+                            <h6 data-animation="fadeInUp" data-delay="100ms">Check out our selection</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">A little something for everyone<span>A little something for everyone</span></h2>
+                            <a data-animation="fadeInUp" data-delay="500ms" asp-controller="Album" asp-action="List" class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-albums-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading style-2">
+                    <p>Check it out</p>
+                    <h2>Our "Albums of the week" selection</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+                <div class="ablums-text text-center mb-70">
+                    <p>Every week we highlight a range of albums. This week you can enjoy a selection of Metallica albums.</p>
+                </div>
+                <div class="ablums-text text-center mb-70">
+                    <p class="alert-danger">Be advised this is only a test site, not a real store!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="albums-slideshow owl-carousel">
+                    <!-- Single Album -->
+                    
+                        @foreach (var album in Model.AlbumsOfTheWeek)
+                        {
+                            <partial name="AlbumsOfTheWeekOverview" model="album" />
+                        }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MusicStoreManager</name>
+    </assembly>
+    <members>
+        <member name="M:MusicStoreManager.ApiClient.MusicStoreApiClient.GetAllAlbumsAsync(System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.String,System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>Get all albums</summary>
+            <param name="accept">Here you can specify our custom mediatype "application/vnd.musicstore.hateos+json" to get HATEOS links.</param>
+            <returns>Success</returns>
+            <exception cref="!:SwaggerException">A server side error occurred.</exception>
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        </member>
+        <member name="M:MusicStoreManager.Controllers.AlbumDataController.GetAllAlbums(MusicStoreManager.Helpers.ResourceParams,System.String)">
+            <summary>
+            Get all albums
+            </summary>
+            <param name="resourceParams">With these parameters you can specify paging, filtering by genre and searching. There also is a fields parameter for datashaping.</param>
+            <param name="mediaType">Here you can specify our custom mediatype "application/vnd.musicstore.hateos+json" to get HATEOS links.</param>
+            <returns>This returns all albums in the database, 12 / page.</returns>
+        </member>
+        <member name="T:MusicStoreManager.Models.AlbumDto">
+            <summary>
+            An album with ID, Title, Price, AlbumartUrl, Artist, ArtistID and Genre
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.AlbumId">
+            <summary>
+            The Id of the album
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.Title">
+            <summary>
+            The album Title
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.Price">
+            <summary>
+            The price of the album
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.AlbumArtUrl">
+            <summary>
+            The location of the albumart
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.Artist">
+            <summary>
+            The name of the artist
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.ArtistId">
+            <summary>
+            The id of the artist
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.Models.AlbumDto.Genre">
+            <summary>
+            The genre of the album
+            </summary>
+        </member>
+        <member name="T:MusicStoreManager.ViewModels.AlbumViewModel">
+            <summary>
+            An album with ID, Title, Price, AlbumartUrl, Artist, ArtistID and Genre
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.AlbumId">
+            <summary>
+            The Id of the album
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.Title">
+            <summary>
+            The album Title
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.Price">
+            <summary>
+            The price of the album
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.AlbumArtUrl">
+            <summary>
+            The location of the albumart
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.Artist">
+            <summary>
+            The name of the artist
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.ArtistId">
+            <summary>
+            The id of the artist
+            </summary>
+        </member>
+        <member name="P:MusicStoreManager.ViewModels.AlbumViewModel.Genre">
+            <summary>
+            The genre of the album
+            </summary>
+        </member>
+    </members>
+</doc>

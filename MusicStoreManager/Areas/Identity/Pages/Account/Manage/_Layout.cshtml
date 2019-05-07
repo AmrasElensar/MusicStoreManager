@@ -1,0 +1,27 @@
+﻿@{ 
+    //Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/images/cog-wheels-2125169_1920.jpg);">
+    <div class="bradcumbContent">
+        <p>Change your account settings</p>
+        <h2>Accountmanager</h2>
+    </div>
+</section>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <partial name="_ManageNav" />
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

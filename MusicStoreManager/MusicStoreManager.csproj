@@ -1,0 +1,91 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>c9149150-7c14-42ef-aa14-fde83d80f702</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\js\**" />
+    <Content Remove="wwwroot\lib\js\**" />
+    <EmbeddedResource Remove="wwwroot\lib\js\**" />
+    <None Remove="wwwroot\lib\js\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\GenreDataController.cs" />
+    <Compile Remove="Migrations\20190223164411_AlbumModelChanged.cs" />
+    <Compile Remove="Migrations\20190223164411_AlbumModelChanged.Designer.cs" />
+    <Compile Remove="Migrations\20190223164955_AlbumModelChanged1.cs" />
+    <Compile Remove="Migrations\20190223164955_AlbumModelChanged1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="Marvin.Cache.Headers" Version="3.1.0" />
+    <PackageReference Include="Marvin.StreamExtensions" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.8.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\classy.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\icomoon.svg" />
+    <None Include="wwwroot\images\rotary-691528_1920.jpg" />
+    <None Include="wwwroot\js\bootstrap\bootstrap.min.js" />
+    <None Include="wwwroot\js\bootstrap\popper.min.js" />
+    <None Include="wwwroot\js\jquery\jquery-2.2.4.min.js" />
+    <None Include="wwwroot\js\plugins\plugins.js" />
+    <None Include="wwwroot\lib\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\css\responsive.css.map" />
+    <None Include="wwwroot\css\ui.css.map" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\fa-brands.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\fa-regular.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\fa-solid.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\fontawesome.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_animated.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_bordered-pulled.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_core.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_fixed-width.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_icons.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_larger.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_list.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_mixins.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_rotated-flipped.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_screen-reader.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_stacked.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\scss\_variables.scss" />
+    <None Include="wwwroot\lib\fonts\fontawesome\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\lib\fonts\fontawesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\lib\fonts\fontawesome\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\lib\fonts\fontawesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\lib\fonts\fontawesome\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\lib\fonts\fontawesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\lib\fonts\material-icons\MaterialIcons-Regular.woff2" />
+    <None Include="wwwroot\lib\images\banners\bg-pattern.svg" />
+    <None Include="wwwroot\lib\images\Thumbs.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\shared\_Layout_noNav.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,78 @@
+﻿@model AlbumViewModel
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+@{
+    Layout = "_Layout_noNav";
+}
+
+<div id="custom-content" class="details-popup card" style="margin-top:5px">
+    <div class="breadcumb-area-sm bg-img bg-overlay" style="background-image: url(/images/every-genre-all-at-once.jpg);">
+        <div class="bradcumbContent">
+            <p>@Model.Artist</p>
+            <h2>@Model.Title</h2>
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px">
+        <aside class="col-sm-5 border-right">
+            <div class="single-album mt-30">
+                <img src="@Model.AlbumArtUrl" />
+            </div>
+        </aside>
+        <aside class="col-sm-7">
+            <article>
+                <div class="mb-3">
+                    <var class="price h3 text-warning">
+                        <span class="currency">EUR €</span><span class="num">@Model.Price</span>
+                    </var>
+                    <span class="currency">EUR €</span><span><del class="price-old">@(Model.Price + 2)</del></span>
+                </div>
+                <dl>
+                    <dt>Description</dt>
+                    <dd>
+                        <p>
+                            Space for description, still needs to be added to the database.
+                            consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco
+                        </p>
+                    </dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3">Genre</dt>
+                    <dd class="col-sm-9">@Model.Genre</dd>
+
+                    <dt class="col-sm-3">Artist</dt>
+                    <dd class="col-sm-9">@Model.Artist</dd>
+
+                    <dt class="col-sm-3">Delivery</dt>
+                    <dd class="col-sm-9">Worldwide </dd>
+                </dl>
+                <div class="rating-wrap">
+                    Rating
+                    <ul class="rating-stars">
+                        <li style="width:80%" class="stars-active">
+                            <i class="fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                @if (SignInManager.IsSignedIn(User) && ViewBag.IsAdmin == true)
+                {
+                    <a target="_self" asp-controller="Album" asp-action="UpdateAlbum"
+                       asp-route-id="@Model.AlbumId" asp-route-artistId="@Model.ArtistId" class="btn oneMusic-btn m-2 float-right"><i class="icon-safebox"></i>Edit Album</a>
+                }
+
+                <a target="_parent" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                   asp-route-id="@Model.AlbumId" class="btn oneMusic-btn m-2 float-right"><i class="icon-shopping-cart"></i>Add to cart</a>
+            </article>
+        </aside>
+    </div>
+</div>
+
