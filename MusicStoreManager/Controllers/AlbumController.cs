@@ -22,7 +22,7 @@ namespace MusicStoreManager.Controllers
     public class AlbumController : Controller
     {
         private readonly IHttpContextAccessor _httpContext;
-        private readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly IAlbumRepository _albumRepository;
         private readonly IGenreRepository _genreRepository;
         private readonly MusicStoreApiClient _httpClient;

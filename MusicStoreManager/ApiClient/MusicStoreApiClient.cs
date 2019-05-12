@@ -20,7 +20,8 @@ namespace MusicStoreManager.ApiClient
         public MusicStoreApiClient(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            BaseUrl = "http://localhost:52757";
+            //BaseUrl = "http://localhost:52757";
+            BaseUrl = "https://musicstoremanager.azurewebsites.net/";
             _httpClient.Timeout = new TimeSpan(0, 0, 30);
             _httpClient.DefaultRequestHeaders.Clear();
 
@@ -32,7 +33,7 @@ namespace MusicStoreManager.ApiClient
             set { _baseUrl = value; }
         }
 
-
+        // not used at the moment
         public async Task<IEnumerable<AlbumDto>> GetAllAlbumsAsync(int? pageNumber, int? pageSize, string genre, string searchQuery, string orderBy, string fields, string accept)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
@@ -81,8 +82,6 @@ namespace MusicStoreManager.ApiClient
         }
 
 
-       
-
         public async Task<AlbumDto> GetAlbumAsync(int id, int artistId)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
@@ -110,6 +109,7 @@ namespace MusicStoreManager.ApiClient
             }
         }
 
+        // helper method to build uri strings
         private string ConvertToString(object value, System.Globalization.CultureInfo cultureInfo)
         {
             if (value is System.Enum)
